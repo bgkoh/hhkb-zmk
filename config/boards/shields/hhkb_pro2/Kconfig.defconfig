@@ -1,1 +1,2 @@
-CONFIG_ZMK_POINTING=y
+config ZMK_POINTING
+    default y
