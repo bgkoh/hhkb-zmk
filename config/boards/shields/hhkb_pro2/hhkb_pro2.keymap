@@ -3,9 +3,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include <dt-bindings/zmk/pointing.h>
+
 #define DEFAULT 0
 #define FN 1
 #define BT 2
+#define MOUSE 3
 
 / {
     keymap {
@@ -17,7 +20,7 @@
 &kp TAB &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp LBKT &kp RBKT &kp BSPC
 &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &kp SQT &kp ENTER
 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp RSHFT &mo FN
-&kp LALT &kp LGUI                 &kp SPACE                   &kp RGUI &kp RALT
+&kp LALT &kp LGUI                 &kp SPACE                   &mo MOUSE &kp RALT
             >;
         };
 
@@ -38,6 +41,16 @@
 &none &none &none &none &none &none &none &none &none &none &none &none &none
 &none &none &none &none &none &none &none &none &none &none &none &none &none
 &none &none             &none                   &none &none
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&mkp MB4  &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN &trans &trans &trans &trans &trans &trans &trans &mkp LCLK &mkp RCLK &trans
+&mkp MB4 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans               &mkp LCLK                    &trans &trans
             >;
         };
 
